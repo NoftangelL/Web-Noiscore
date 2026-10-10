@@ -1,0 +1,241 @@
+:root {
+  --primary: #7bc7eb;
+  --background: linear-gradient(135deg, #eeebeb 0%, #d0e8f9 100%);
+  --text-color: #266280;
+  --btn-bg: var(--primary);
+  --btn-hover-bg: #5aa9d8;
+  --error-color: #e74c3c;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding-top: 80px;
+  margin: -5rem;
+  /* for fixed navbar */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 0 solid transparent;
+  transition: border-color 0.3s;
+}
+
+.navbar-nav a.active,
+.navbar-nav a:hover {
+  border-bottom: 2px solid var(--primary);
+}
+
+.navbar-extra a {
+  color: white;
+  margin-left: 1rem;
+  font-size: 1.3rem;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../image/image\ bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+/* Container */
+
+.container {
+  max-width: 900px;
+  margin: 110px auto 4rem;
+  padding: 0 1rem;
+}
+
+/* Membership CTA Section */
+
+.membership-cta {
+  background-color: #ffffffe3;
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 25px rgba(123, 199, 235, 0.35);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.membership-cta:hover {
+  transform: translateY(-10px);
+}
+
+.membership-cta h1 {
+  font-size: 3.4rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.membership-cta p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 900;
+  text-align: center;
+  color: #fff;
+  background-color: var(--btn-bg);
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(123, 199, 235, 0.45);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.btn:hover,
+.cta-btn:hover {
+  background-color: var(--btn-hover-bg);
+  box-shadow: 0 10px 28px rgba(90, 169, 216, 0.7);
+}
+
+/* Promotions Section */
+
+.promotions h2 {
+  margin-bottom: 3rem;
+  color: var(--primary);
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* Promotion List */
+
+.promotion-list {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.promotion-list li {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 18px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 24px rgba(123, 199, 235, 0.25);
+  transition: all 0.3s ease;
+}
+
+.promotion-list li:hover {
+  box-shadow: 0 14px 36px rgba(123, 199, 235, 0.45);
+  transform: translateY(-8px);
+}
+
+.promotion-list h3 {
+  font-size: 1.9rem;
+  font-weight: 900;
+  margin-bottom: 0.6rem;
+  color: var(--text-color);
+  letter-spacing: 0.02em;
+}
+
+.promotion-list p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .membership-cta {
+    padding: 2.2rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .membership-cta h1 {
+    font-size: 2.5rem;
+  }
+  .membership-cta p {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+  .btn {
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+  }
+  .promotion-list li {
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.6rem;
+  }
+  .promotion-list h3 {
+    font-size: 1.5rem;
+  }
+  .promotion-list p {
+    font-size: 1rem;
+  }
+}
